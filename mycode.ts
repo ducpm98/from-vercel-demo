@@ -15,17 +15,35 @@ const myCourses: Array<Course> = [
 ];
 const tArea4 = document.getElementById("area4-table");
 
-for (let i = 0; i < myCourses.length/2; i++) {
+// for (let i = 0; i < myCourses.length; i++) {
+//     const getTR = document.createElement("tr");
+
+//     const th_courseNum = document.createElement("th");
+//     th_courseNum.innerText = myCourses[i].courseNumber;
+
+//     const th_courseName = document.createElement("th");
+//     th_courseName.innerText = myCourses[i].courseName
+
+//     const th_yearTaken = document.createElement("th");
+//     th_yearTaken.innerText = myCourses[i].semesterTaken;
+//     getTR.appendChild(th_courseNum);
+//     getTR.appendChild(th_courseName);
+//     getTR.appendChild(th_yearTaken);
+
+//     tArea4?.appendChild(getTR);
+// }
+
+for (let course of myCourses) {
     const getTR = document.createElement("tr");
 
     const th_courseNum = document.createElement("th");
-    th_courseNum.innerText = myCourses[i].courseNumber;
+    th_courseNum.innerText = course.courseNumber;
 
     const th_courseName = document.createElement("th");
-    th_courseName.innerText = myCourses[i].courseName
+    th_courseName.innerText = course.courseName
 
     const th_yearTaken = document.createElement("th");
-    th_yearTaken.innerText = myCourses[i].semesterTaken;
+    th_yearTaken.innerText = course.semesterTaken;
     getTR.appendChild(th_courseNum);
     getTR.appendChild(th_courseName);
     getTR.appendChild(th_yearTaken);
@@ -47,14 +65,39 @@ const myCompany: Array<Company> = [
 ];
 const area6 = document.getElementById("area6-ul");
 
-for(let i=0; i< myCompany.length/2; i++){
+for(let i=0; i< myCompany.length; i++){
     const get_li = document.createElement("li");
     const a = document.createElement("a");
     a.setAttribute("href",myCompany[i].url) ;
     a.textContent = myCompany[i].name;
     get_li.appendChild(a);
     area6?.appendChild(get_li);
-    //area6?.appendChild(a);
 }
 
 /**************** Area 8 ****************/
+type SocialMedia = {
+    src: string;   
+    url: string;  
+  }
+
+const mySocialMedia = [
+    {src: "pic/2021_Facebook_icon.svg.png", url:"https://www.facebook.com/"},
+    {src: "pic/twitter.png", url:"https://twitter.com/"},
+    {src: "pic/youtube.png", url:"https://www.youtube.com/"},
+    {src: "pic/instagram.webp", url:"https://www.instagram.com/"},
+    {src: "pic/skype-icon.png", url:"https://www.skype.com/en/"}
+];
+
+const area8 = document.getElementsByClassName("area8");
+
+for (const socialMedia of mySocialMedia) {
+    const img = document.createElement("img");
+    img.src = socialMedia.src;
+  
+    const a = document.createElement("a");
+    a.href = socialMedia.url;
+    a.appendChild(img);
+  
+    area8[0].appendChild(a);
+  }
+  
