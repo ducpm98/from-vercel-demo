@@ -47,7 +47,6 @@ for (let course of myCourses) {
     getTR.appendChild(th_courseNum);
     getTR.appendChild(th_courseName);
     getTR.appendChild(th_yearTaken);
-
     tArea4?.appendChild(getTR);
 }
 
@@ -90,7 +89,7 @@ const mySocialMedia = [
 
 const area8 = document.getElementsByClassName("area8");
 
-for (const socialMedia of mySocialMedia) {
+for( const socialMedia of mySocialMedia) {
     const img = document.createElement("img");
     img.src = socialMedia.src;
   
